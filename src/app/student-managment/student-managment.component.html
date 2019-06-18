@@ -1,0 +1,32 @@
+<form [formGroup]="myForm">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Name</label>
+    <input class="form-control" placeholder="Name" formControlName="name" />
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Surname</label>
+    <input
+      class="form-control"
+      placeholder="Surname"
+      formControlName="lastName"
+    />
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">ID</label>
+    <input
+      class="form-control"
+      placeholder="ID"
+      formControlName="id"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary" *ngIf='!editStu' (click)= "onSubmit()">Save</button>
+  <button   class="btn btn-primary" *ngIf='editStu' (click)='update()' >Save Changes</button>
+  <button   class="btn btn-primary" *ngIf='editStu' (click)='cancel()'>Cancel</button>
+</form>
+
+<div>
+<app-student-list   [studentArr]="studentArr">
+
+  
+</app-student-list>
+</div>

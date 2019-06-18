@@ -1,0 +1,9 @@
+
+  <h2 *ngIf="studentArr.length > 0">Student item</h2>
+  <ul class="list-group" *ngFor="let student of   studentArr; let i = index">
+    <li class="list-group-item">Name: {{ student.name }}</li>
+    <li class="list-group-item">Surname: {{ student.lastName }}</li>
+    <li class="list-group-item">ID: {{ student.id }}</li>
+    <button type="button" class="btn-danger" (click)='delete(i)' >DELETE</button>
+    <button type="button" class="btn-primary" (click)='edit(i)' >EDIT</button>
+  </ul>
